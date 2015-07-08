@@ -4,6 +4,8 @@ NAME="vidcon"
 FLASKDIR=/var/www/vidcon
 VENVDIR=/var/www/vidcon/vidcon_env
 SOCKFILE=/var/www/vidcon/sock
+ACCESSLOG=/var/www/vidcon/logs/gunicorn_access.log
+ERRORLOG=/var/www/vidcon/logs/gunicorn_error.log
 USER=vidconuser
 
 GROUP=vidconuser
@@ -23,8 +25,5 @@ RUNDIR=$(dirname $SOCKFILE)
 test -d $RUNDIR || mkdir -p $RUNDIR
 
 # Start your unicorn
-exec gunicorn app:app -b localhost:8000
-  --name $NAME \
-  --workers $NUM_WORKERS \
-  --user=$USER --group=$GROUP \
-  --log-level=debug \
+#exec gunicorn app:app -b localhost:8000 --name $NAME --workers $NUM_WORKERS --user=$USER --group=$GROUP --access-logfile=$ACCESSLOG --error-logfile=$ERRORLOG --log-level=debug 
+exec gunicorn -b localhost:8000 -n $NAME -w $NUM_WORKERS -u $USER  --access-logfile $ACCESSLOG --error-logfile $ERRORLOG --log-level=warning app:app 

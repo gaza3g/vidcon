@@ -669,3 +669,71 @@ Starting vidcon
 [2015-07-07 17:20:36 +0000] [1435] [INFO] Listening at: http://127.0.0.1:8000 (1435)
 [2015-07-07 17:20:36 +0000] [1435] [INFO] Using worker: sync
 [2015-07-07 17:20:36 +0000] [1508] [INFO] Booting worker with pid: 1508
+Starting vidcon
+/var/www/vidcon/gunicorn_start: line 17: bin/activate: No such file or directory
+/var/www/vidcon/gunicorn_start: line 26: exec: gunicorn: not found
+Starting vidcon
+/var/www/vidcon/gunicorn_start: line 17: bin/activate: No such file or directory
+/var/www/vidcon/gunicorn_start: line 26: exec: gunicorn: not found
+Starting vidcon
+/var/www/vidcon/gunicorn_start: line 17: bin/activate: No such file or directory
+/var/www/vidcon/gunicorn_start: line 26: exec: gunicorn: not found
+Starting vidcon
+/var/www/vidcon/gunicorn_start: line 17: bin/activate: No such file or directory
+/var/www/vidcon/gunicorn_start: line 26: exec: gunicorn: not found
+Starting vidcon
+/var/www/vidcon/gunicorn_start: line 17: bin/activate: No such file or directory
+/var/www/vidcon/gunicorn_start: line 26: exec: gunicorn: not found
+Starting vidcon
+/var/www/vidcon/gunicorn_start: line 17: bin/activate: No such file or directory
+/var/www/vidcon/gunicorn_start: line 26: exec: gunicorn: not found
+Starting vidcon
+/var/www/vidcon/gunicorn_start: line 17: bin/activate: No such file or directory
+/var/www/vidcon/gunicorn_start: line 26: exec: gunicorn: not found
+Starting vidcon
+/var/www/vidcon/gunicorn_start: line 17: bin/activate: No such file or directory
+/var/www/vidcon/gunicorn_start: line 26: exec: gunicorn: not found
+Starting vidcon
+[2015-07-08 10:17:26 +0000] [1435] [INFO] Starting gunicorn 19.3.0
+[2015-07-08 10:17:26 +0000] [1435] [INFO] Listening at: http://127.0.0.1:8000 (1435)
+[2015-07-08 10:17:26 +0000] [1435] [INFO] Using worker: sync
+[2015-07-08 10:17:26 +0000] [1509] [INFO] Booting worker with pid: 1509
+[2015-07-08 12:19:02 +0000] [1435] [INFO] Handling signal: term
+[2015-07-08 12:19:02 +0000] [1509] [INFO] Worker exiting (pid: 1509)
+f30bd26f-9ff6-4929-8981-4e837c8f7247
+443365de-6d00-4c35-b843-619e9109fbef
+6f053463-be4a-48b2-b0b2-d911d910ca42
+b7da4082-9507-4140-bc90-1a2dd3f187c0
+[2015-07-08 12:19:02 +0000] [1435] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-08 12:19:04 +0000] [3125] [INFO] Starting gunicorn 19.3.0
+[2015-07-08 12:19:04 +0000] [3125] [INFO] Listening at: http://127.0.0.1:8000 (3125)
+[2015-07-08 12:19:04 +0000] [3125] [INFO] Using worker: sync
+[2015-07-08 12:19:04 +0000] [3135] [INFO] Booting worker with pid: 3135
+[2015-07-08 12:23:48 +0000] [3125] [INFO] Handling signal: term
+[2015-07-08 12:23:48 +0000] [3135] [INFO] Worker exiting (pid: 3135)
+bb8335e1-191d-4984-a4df-67074ccc2ee7
+[2015-07-08 12:23:48 +0000] [3125] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-08 12:23:49 +0000] [3176] [INFO] Starting gunicorn 19.3.0
+[2015-07-08 12:23:49 +0000] [3176] [INFO] Listening at: http://127.0.0.1:8000 (3176)
+[2015-07-08 12:23:49 +0000] [3176] [INFO] Using worker: sync
+[2015-07-08 12:23:49 +0000] [3186] [INFO] Booting worker with pid: 3186
+[2015-07-08 12:27:07 +0000] [3176] [INFO] Handling signal: term
+[2015-07-08 12:27:07 +0000] [3186] [INFO] Worker exiting (pid: 3186)
+53e43ea2-fa7c-491c-91f7-686a085109ec
+[2015-07-08 12:27:07 +0000] [3176] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-08 12:27:08 +0000] [3209] [INFO] Starting gunicorn 19.3.0
+[2015-07-08 12:27:08 +0000] [3209] [INFO] Listening at: http://127.0.0.1:8000 (3209)
+[2015-07-08 12:27:08 +0000] [3209] [INFO] Using worker: sync
+[2015-07-08 12:27:08 +0000] [3219] [INFO] Booting worker with pid: 3219
+[2015-07-08 12:34:47 +0000] [3209] [INFO] Handling signal: term
+[2015-07-08 12:34:47 +0000] [3219] [INFO] Worker exiting (pid: 3219)
+2b170411-7c35-4b45-be2c-c20a3ad27fae
+[2015-07-08 12:34:47 +0000] [3209] [INFO] Shutting down: Master
+Starting vidcon
+81718c22-a2f0-40a5-a4bb-347073d89a68
+Starting vidcon
+Starting vidcon
+Starting vidcon

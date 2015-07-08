@@ -1,0 +1,5 @@
+2015/07/08 12:52:24 [error] 3474#0: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.139.1, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "192.168.139.223"
+2015/07/08 13:12:10 [error] 3474#0: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.139.1, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "192.168.139.223"
+2015/07/08 13:16:00 [error] 3474#0: *7 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.139.1, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "192.168.139.223"
+2015/07/08 13:20:24 [error] 3474#0: *10 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.139.1, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "192.168.139.223"
+2015/07/08 13:33:18 [error] 3474#0: *15 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.139.1, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "192.168.139.223"
