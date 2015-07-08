@@ -1,0 +1,30 @@
+#!/bin/bash
+
+NAME="vidcon"
+FLASKDIR=/var/www/vidcon
+VENVDIR=/var/www/vidcon/vidcon_env
+SOCKFILE=/var/www/vidcon/sock
+USER=vidconuser
+
+GROUP=vidconuser
+
+NUM_WORKERS=3
+
+echo "Starting $NAME"
+
+# activate the virtualenv
+cd $VENVDIR
+source bin/activate
+
+export PYTHONPATH=$FLASKDIR:$PYTHONPATH
+
+# Create the run directory if it doesn't exist
+RUNDIR=$(dirname $SOCKFILE)
+test -d $RUNDIR || mkdir -p $RUNDIR
+
+# Start your unicorn
+exec gunicorn app:app -b localhost:8000
+  --name $NAME \
+  --workers $NUM_WORKERS \
+  --user=$USER --group=$GROUP \
+  --log-level=debug \

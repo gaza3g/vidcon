@@ -1,0 +1,183 @@
+Error 111 connecting to localhost:6379. Connection refused.
+Error 111 connecting to localhost:6379. Connection refused.
+Error 111 connecting to localhost:6379. Connection refused.
+Error 111 connecting to localhost:6379. Connection refused.
+Error 111 connecting to localhost:6379. Connection refused.
+Error 111 connecting to localhost:6379. Connection refused.
+Error 111 connecting to localhost:6379. Connection refused.
+Error 111 connecting to localhost:6379. Connection refused.
+Error 111 connecting to localhost:6379. Connection refused.
+Error 111 connecting to localhost:6379. Connection refused.
+Error 111 connecting to localhost:6379. Connection refused.
+Error 111 connecting to localhost:6379. Connection refused.
+Error 111 connecting to localhost:6379. Connection refused.
+Error 111 connecting to localhost:6379. Connection refused.
+ffmpeg version 2.7.1 Copyright (c) 2000-2015 the FFmpeg developers
+  built with gcc 4.8 (Ubuntu 4.8.4-2ubuntu1~14.04)
+  configuration: --extra-libs=-ldl --prefix=/opt/ffmpeg --enable-avresample --disable-debug --enable-nonfree --enable-gpl --enable-version3 --enable-libopencore-amrnb --enable-libopencore-amrwb --disable-decoder=amrnb --disable-decoder=amrwb --enable-libpulse --enable-libdcadec --enable-libx264 --enable-libx265 --enable-libfdk-aac --enable-libvorbis --enable-libmp3lame --enable-libopus --enable-libvpx --enable-libspeex --enable-libass --enable-avisynth --enable-libsoxr --enable-libxvid --enable-libvo-aacenc --enable-libvidstab
+  libavutil      54. 27.100 / 54. 27.100
+  libavcodec     56. 41.100 / 56. 41.100
+  libavformat    56. 36.100 / 56. 36.100
+  libavdevice    56.  4.100 / 56.  4.100
+  libavfilter     5. 16.101 /  5. 16.101
+  libavresample   2.  1.  0 /  2.  1.  0
+  libswscale      3.  1.101 /  3.  1.101
+  libswresample   1.  2.100 /  1.  2.100
+  libpostproc    53.  3.100 / 53.  3.100
+[theora @ 0x38cfd40] 7 bits left in packet 82
+[ogg @ 0x38cf3e0] Broken file, keyframe not correctly marked.
+Input #0, ogg, from '/media/edulearnupload/input/test1.ogg':
+  Duration: 00:00:33.00, start: 0.000000, bitrate: 1057 kb/s
+    Stream #0:0: Video: theora, yuv420p(bt470bg/bt470bg/bt709), 720x400, 25 fps, 25 tbr, 25 tbn, 25 tbc
+    Metadata:
+      ENCODER         : ffmpeg2theora 0.19
+    Stream #0:1: Audio: vorbis, 48000 Hz, stereo, fltp, 80 kb/s
+    Metadata:
+      ENCODER         : ffmpeg2theora 0.19
+[libx264 @ 0x38ee360] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX AVX2 FMA3 LZCNT BMI2
+[libx264 @ 0x38ee360] profile Constrained Baseline, level 3.0
+[libx264 @ 0x38ee360] 264 - core 142 r2491 24e4fed - H.264/MPEG-4 AVC codec - Copyleft 2003-2014 - http://www.videolan.org/x264.html - options: cabac=0 ref=3 deblock=1:0:0 analyse=0x1:0x111 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=1 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+[theora @ 0x38d2020] 7 bits left in packet 82
+Output #0, mp4, to '/media/edulearnupload/output/test1.ogg_converted.mp4':
+  Metadata:
+    encoder         : Lavf56.36.100
+    Stream #0:0: Video: h264 (libx264) ([33][0][0][0] / 0x0021), yuv420p, 720x400, q=-1--1, 25 fps, 12800 tbn, 25 tbc
+    Metadata:
+      encoder         : Lavc56.41.100 libx264
+    Stream #0:1: Audio: aac ([64][0][0][0] / 0x0040), 48000 Hz, stereo, fltp, 128 kb/s
+    Metadata:
+      encoder         : Lavc56.41.100 aac
+Stream mapping:
+  Stream #0:0 -> #0:0 (theora (native) -> h264 (libx264))
+  Stream #0:1 -> #0:1 (vorbis (native) -> aac (native))
+Press [q] to stop, [?] for help
+frame=   51 fps=0.0 q=28.0 size=      19kB time=00:00:01.98 bitrate=  76.6kbits/s    [ogg @ 0x38cf3e0] Broken file, keyframe not correctly marked.
+frame=   71 fps= 62 q=28.0 size=      64kB time=00:00:02.49 bitrate= 209.2kbits/s    frame=  102 fps= 62 q=28.0 size=     112kB time=00:00:03.52 bitrate= 260.2kbits/s    frame=  130 fps= 60 q=28.0 size=     158kB time=00:00:05.03 bitrate= 257.7kbits/s    frame=  141 fps= 53 q=28.0 size=     356kB time=00:00:05.50 bitrate= 529.7kbits/s    frame=  149 fps= 47 q=28.0 size=     566kB time=00:00:05.50 bitrate= 842.5kbits/s    frame=  161 fps= 43 q=28.0 size=     722kB time=00:00:05.99 bitrate= 986.9kbits/s    frame=  175 fps= 41 q=28.0 size=     816kB time=00:00:06.48 bitrate=1030.5kbits/s    frame=  188 fps= 40 q=28.0 size=     896kB time=00:00:06.97 bitrate=1052.4kbits/s    [ogg @ 0x38cf3e0] Broken file, keyframe not correctly marked.
+frame=  200 fps= 38 q=28.0 size=     995kB time=00:00:07.48 bitrate=1088.8kbits/s    frame=  210 fps= 36 q=28.0 size=    1226kB time=00:00:07.95 bitrate=1261.7kbits/s    frame=  222 fps= 35 q=28.0 size=    1394kB time=00:00:08.5ffmpeg version 2.7.1 Copyright (c) 2000-2015 the FFmpeg developers
+  built with gcc 4.8 (Ubuntu 4.8.4-2ubuntu1~14.04)
+  configuration: --extra-libs=-ldl --prefix=/opt/ffmpeg --enable-avresample --disable-debug --enable-nonfree --enable-gpl --enable-version3 --enable-libopencore-amrnb --enable-libopencore-amrwb --disable-decoder=amrnb --disable-decoder=amrwb --enable-libpulse --enable-libdcadec --enable-libx264 --enable-libx265 --enable-libfdk-aac --enable-libvorbis --enable-libmp3lame --enable-libopus --enable-libvpx --enable-libspeex --enable-libass --enable-avisynth --enable-libsoxr --enable-libxvid --enable-libvo-aacenc --enable-libvidstab
+  libavutil      54. 27.100 / 54. 27.100
+  libavcodec     56. 41.100 / 56. 41.100
+  libavformat    56. 36.100 / 56. 36.100
+  libavdevice    56.  4.100 / 56.  4.100
+  libavfilter     5. 16.101 /  5. 16.101
+  libavresample   2.  1.  0 /  2.  1.  0
+  libswscale      3.  1.101 /  3.  1.101
+  libswresample   1.  2.100 /  1.  2.100
+  libpostproc    53.  3.100 / 53.  3.100
+Guessed Channel Layout for  Input Stream #0.1 : stereo
+Input #0, mpeg, from '/media/edulearnupload/input/mpeg2-pcm-misdetect.mpg':
+  Duration: 00:00:05.11, start: 0.213367, bitrate: 16431 kb/s
+    Stream #0:0[0x1e0]: Video: mpeg2video (Main), yuv420p(tv), 720x480 [SAR 8:9 DAR 4:3], 15000 kb/s, 29.97 fps, 29.97 tbr, 90k tbn, 59.94 tbc
+    Stream #0:1[0xa0]: Audio: pcm_dvd, 48000 Hz, 2 channels, s16, 1536 kb/s
+[libx264 @ 0x294b8a0] using SAR=8/9
+[libx264 @ 0x294b8a0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX AVX2 FMA3 LZCNT BMI2
+[libx264 @ 0x294b8a0] profile Constrained Baseline, level 3.0
+[libx264 @ 0x294b8a0] 264 - core 142 r2491 24e4fed - H.264/MPEG-4 AVC codec - Copyleft 2003-2014 - http://www.videolan.org/x264.html - options: cabac=0 ref=3 deblock=1:0:0 analyse=0x1:0x111 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=1 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/media/edulearnupload/output/mpeg2-pcm-misdetect.mpg_converted.mp4':
+  Metadata:
+    encoder         : Lavf56.36.100
+    Stream #0:0: Video: h264 (libx264) ([33][0][0][0] / 0x0021), yuv420p, 720x480 [SAR 8:9 DAR 4:3], q=-1--1, 29.97 fps, 30k tbn, 29.97 tbc
+    Metadata:
+      encoder         : Lavc56.41.100 libx264
+    Stream #0:1: Audio: aac ([64][0][0][0] / 0x0040), 48000 Hz, stereo, fltp (16 bit), 128 kb/s
+    Metadata:
+      encoder         : Lavc56.41.100 aac
+Stream mapping:
+  Stream #0:0 -> #0:0 (mpeg2video (native) -> h264 (libx264))
+  Stream #0:1 -> #0:1 (pcm_dvd (native) -> aac (native))
+Press [q] to stop, [?] for help
+frame=   63 fps=0.0 q=29.0 size=      13kB time=00:00:01.96 bitrate=  53.5kbits/s    frame=   88 fps= 86 q=29.0 size=      36kB time=00:00:02.79 bitrate= 104.4kbits/s    frame=  108 fps= 71 q=29.0 size=      62kB time=00:00:03.45 bitrate= 145.9kbits/s    frame=  130 fps= 64 q=29.0 size=      95kB time=00:00:04.20 bitrate= 185.9kbits/s    [mp4 @ 0x294a680] Starting second pass: moving the moov atom to the beginning of the file
+frame=  153 fps= 46 q=29.0 Lsize=     161kB time=00:00:05.10 bitrate= 258.6kbits/s dup=1 drop=0    
+video:76kB audio:78kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 4.614400%
+[libx264 @ 0x294b8a0] frame I:3     Avg QP:11.11  size:  1804
+[libx264 @ 0x294b8a0] frame P:150   Avg QP:18.23  size:   480
+[libx264 @ 0x294b8a0] mb I  I16..4: 97.7%  0.0%  2.3%
+[libx264 @ 0x294b8a0] mb P  I16..4:  4.5%  0.0%  0.4%  P16..4:  2.7%  0.5%  0.2%  0.0%  0.0%    skip:91.7%
+[libx264 @ 0x294b8a0] coded y,uvDC,uvAC intra: 5.1% 32.5% 9.5% inter: 0.5% 1.8% 0.4%
+[libx264 @ 0x294b8a0] i16 v,h,dc,p: 79% 15%  3%  3%
+[libx264 @ 0x294b8a0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 20% 27% 32%  5%  4%  3%  4%  2%  2%
+[libx264 @ 0x294b8a0] i8c dc,h,v,p: 58% 16% ffmpeg version 2.7.1 Copyright (c) 2000-2015 the FFmpeg developers
+  built with gcc 4.8 (Ubuntu 4.8.4-2ubuntu1~14.04)
+  configuration: --extra-libs=-ldl --prefix=/opt/ffmpeg --enable-avresample --disable-debug --enable-nonfree --enable-gpl --enable-version3 --enable-libopencore-amrnb --enable-libopencore-amrwb --disable-decoder=amrnb --disable-decoder=amrwb --enable-libpulse --enable-libdcadec --enable-libx264 --enable-libx265 --enable-libfdk-aac --enable-libvorbis --enable-libmp3lame --enable-libopus --enable-libvpx --enable-libspeex --enable-libass --enable-avisynth --enable-libsoxr --enable-libxvid --enable-libvo-aacenc --enable-libvidstab
+  libavutil      54. 27.100 / 54. 27.100
+  libavcodec     56. 41.100 / 56. 41.100
+  libavformat    56. 36.100 / 56. 36.100
+  libavdevice    56.  4.100 / 56.  4.100
+  libavfilter     5. 16.101 /  5. 16.101
+  libavresample   2.  1.  0 /  2.  1.  0
+  libswscale      3.  1.101 /  3.  1.101
+  libswresample   1.  2.100 /  1.  2.100
+  libpostproc    53.  3.100 / 53.  3.100
+Guessed Channel Layout for  Input Stream #0.1 : stereo
+Input #0, mpeg, from '/media/edulearnupload/input/mpeg2-pcm-misdetect.mpg':
+  Duration: 00:00:05.11, start: 0.213367, bitrate: 16431 kb/s
+    Stream #0:0[0x1e0]: Video: mpeg2video (Main), yuv420p(tv), 720x480 [SAR 8:9 DAR 4:3], 15000 kb/s, 29.97 fps, 29.97 tbr, 90k tbn, 59.94 tbc
+    Stream #0:1[0xa0]: Audio: pcm_dvd, 48000 Hz, 2 channels, s16, 1536 kb/s
+[libx264 @ 0x33ce8a0] using SAR=8/9
+[libx264 @ 0x33ce8a0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX AVX2 FMA3 LZCNT BMI2
+[libx264 @ 0x33ce8a0] profile Constrained Baseline, level 3.0
+[libx264 @ 0x33ce8a0] 264 - core 142 r2491 24e4fed - H.264/MPEG-4 AVC codec - Copyleft 2003-2014 - http://www.videolan.org/x264.html - options: cabac=0 ref=3 deblock=1:0:0 analyse=0x1:0x111 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=1 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '/media/edulearnupload/output/mpeg2-pcm-misdetect.mpg_converted.mp4':
+  Metadata:
+    encoder         : Lavf56.36.100
+    Stream #0:0: Video: h264 (libx264) ([33][0][0][0] / 0x0021), yuv420p, 720x480 [SAR 8:9 DAR 4:3], q=-1--1, 29.97 fps, 30k tbn, 29.97 tbc
+    Metadata:
+      encoder         : Lavc56.41.100 libx264
+    Stream #0:1: Audio: aac ([64][0][0][0] / 0x0040), 48000 Hz, stereo, fltp (16 bit), 128 kb/s
+    Metadata:
+      encoder         : Lavc56.41.100 aac
+Stream mapping:
+  Stream #0:0 -> #0:0 (mpeg2video (native) -> h264 (libx264))
+  Stream #0:1 -> #0:1 (pcm_dvd (native) -> aac (native))
+Press [q] to stop, [?] for help
+frame=   85 fps=0.0 q=29.0 size=      33kB time=00:00:02.68 bitrate= 101.8kbits/s    frame=  100 fps= 94 q=29.0 size=      51kB time=00:00:03.17 bitrate= 130.4kbits/s    frame=  108 fps= 68 q=29.0 size=      62kB time=00:00:03.45 bitrate= 145.9kbits/s    frame=  118 fps= 55 q=29.0 size=      77kB time=00:00:03.77 bitrate= 167.8kbits/s    frame=  132 fps= 49 q=29.0 size=      98kB time=00:00:04.24 bitrate= 189.0kbits/s    frame=  146 fps= 45 q=29.0 size=     118kB time=00:00:04.73 bitrate= 203.4kbits/s    [mp4 @ 0x33cd680] Starting second pass: moving the moov atom to the beginning of the file
+frame=  153 fps= 37 q=29.0 Lsize=     161kB time=00:00:05.10 bitrate= 258.6kbits/s dup=1 drop=0    
+video:76kB audio:78kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 4.614400%
+[libx264 @ 0x33ce8a0] frame I:3     Avg QP:11.11  size:  1804
+[libx264 @ 0x33ce8a0] frame P:150   Avg QP:18.23  size:   480
+[libx264 @ 0x33ce8a0] mb I  I16..4: 97.7%  0.0%  2.3%
+[libx264 @ 0x33ce8a0] mb P  I16..4:  4.5%  0.0%  0.4%  P16..4:  2.7%  0.5%  0.2%  0.0%  0.0%    skip:91.7%
+[libx264 @ 0x33ce8a0] coded y,uvDC,uvAC intra: 5.1% 32.5% 9.5% inter: 0.5% 1.8% 0.4%
+[libx264 @ 0xffmpeg version 2.7.1 Copyright (c) 2000-2015 the FFmpeg developers
+  built with gcc 4.8 (Ubuntu 4.8.4-2ubuntu1~14.04)
+  configuration: --extra-libs=-ldl --prefix=/opt/ffmpeg --enable-avresample --disable-debug --enable-nonfree --enable-gpl --enable-version3 --enable-libopencore-amrnb --enable-libopencore-amrwb --disable-decoder=amrnb --disable-decoder=amrwb --enable-libpulse --enable-libdcadec --enable-libx264 --enable-libx265 --enable-libfdk-aac --enable-libvorbis --enable-libmp3lame --enable-libopus --enable-libvpx --enable-libspeex --enable-libass --enable-avisynth --enable-libsoxr --enable-libxvid --enable-libvo-aacenc --enable-libvidstab
+  libavutil      54. 27.100 / 54. 27.100
+  libavcodec     56. 41.100 / 56. 41.100
+  libavformat    56. 36.100 / 56. 36.100
+  libavdevice    56.  4.100 / 56.  4.100
+  libavfilter     5. 16.101 /  5. 16.101
+  libavresample   2.  1.  0 /  2.  1.  0
+  libswscale      3.  1.101 /  3.  1.101
+  libswresample   1.  2.100 /  1.  2.100
+  libpostproc    53.  3.100 / 53.  3.100
+[theora @ 0x1d08d40] 7 bits left in packet 82
+[ogg @ 0x1d083e0] Broken file, keyframe not correctly marked.
+Input #0, ogg, from '/media/edulearnupload/input/test1.ogg':
+  Duration: 00:00:33.00, start: 0.000000, bitrate: 1057 kb/s
+    Stream #0:0: Video: theora, yuv420p(bt470bg/bt470bg/bt709), 720x400, 25 fps, 25 tbr, 25 tbn, 25 tbc
+    Metadata:
+      ENCODER         : ffmpeg2theora 0.19
+    Stream #0:1: Audio: vorbis, 48000 Hz, stereo, fltp, 80 kb/s
+    Metadata:
+      ENCODER         : ffmpeg2theora 0.19
+[libx264 @ 0x1d27360] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX AVX2 FMA3 LZCNT BMI2
+[libx264 @ 0x1d27360] profile Constrained Baseline, level 3.0
+[libx264 @ 0x1d27360] 264 - core 142 r2491 24e4fed - H.264/MPEG-4 AVC codec - Copyleft 2003-2014 - http://www.videolan.org/x264.html - options: cabac=0 ref=3 deblock=1:0:0 analyse=0x1:0x111 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=1 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+[theora @ 0x1d0b020] 7 bits left in packet 82
+Output #0, mp4, to '/media/edulearnupload/output/test1.ogg_converted.mp4':
+  Metadata:
+    encoder         : Lavf56.36.100
+    Stream #0:0: Video: h264 (libx264) ([33][0][0][0] / 0x0021), yuv420p, 720x400, q=-1--1, 25 fps, 12800 tbn, 25 tbc
+    Metadata:
+      encoder         : Lavc56.41.100 libx264
+    Stream #0:1: Audio: aac ([64][0][0][0] / 0x0040), 48000 Hz, stereo, fltp, 128 kb/s
+    Metadata:
+      encoder         : Lavc56.41.100 aac
+Stream mapping:
+  Stream #0:0 -> #0:0 (theora (native) -> h264 (libx264))
+  Stream #0:1 -> #0:1 (vorbis (native) -> aac (native))
+Press [q] to stop, [?] for help
+frame=   55 fps=0.0 q=28.0 size=      28kB time=00:00:01.98 bitrate= 115.6kbits/s    [ogg @ 0x1d083e0] Broken file, keyframe not correctly marked.
+frame=   67 fps= 66 q=28.0 size=      57kB time=00:00:02.49 bitrate= 188.6kbits/s    frame=   97 fps= 63 q=28.0 size=     104kB time=00:00:03.52 bitrate= 242.0kbits/s    frame=  121 fps= 59 q=28.0 size=     143kB time=00:00:04.54 bitrate= 257.4kbits/s    frame=  130 fps= 47 q=28.0 size=     158kB time=00:00:05.03 bitrate= 257.7kbits/s    frame=  139 fps= 42 q=28.0 size=     305kB time=00:00:05.05 bitrate= 494.9kbits/s    frame=  149 fps= 39 q=28.0 size=     566kB time=00:00:05.50 bitrate= 842.5kbits/s    frame=  160 fps= 37 q=28.0 size=     716kB time=00:00:05.99 bitrate= 977.8kbits/s    frame=  167 fps= 33 q=28.0 size=     760kB time=00:00:06.48 bitrate= 960.0kbits/s    frame=  180 fps= 32 q=28.0 size=     847kB time=00:00:06.97 bitrate= 994.2kbits/s    [ogg @ 0x1d083e0] Broken file, keyframe not correctly marked.
+frame=  193 fps= 32 q=28.0 size=     927kB time=00:00:07.46 bitrate=1016.8kbits/s    frame=  205 fps= 31 q=28.0 size=    1107kB time=00:00:07.9

@@ -1,0 +1,671 @@
+Starting vidcon
+[2015-07-07 10:15:46 +0000] [13839] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x7f9f513947d0>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x7f9f51394500>
+  pre_fork: <function pre_fork at 0x7f9f51394668>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 1001
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 3
+  proc_name: vidcon
+  sendfile: True
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x7f9f51394398>
+  pre_exec: <function pre_exec at 0x7f9f51394d70>
+  worker_tmp_dir: None
+  post_worker_init: <function post_worker_init at 0x7f9f51394938>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x7f9f51399488>
+  config: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7f9f51394ed8>
+  post_request: <function post_request at 0x7f9f51399050>
+  user: 1001
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x7f9f51394aa0>
+  threads: 1
+  max_requests: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x7f9f513991b8>
+  chdir: /var/www/vidcon/vidcon_env
+  paste: None
+  default_proc_name: runserver:app
+  errorlog: -
+  loglevel: debug
+  logconfig: None
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  daemon: False
+  ciphers: TLSv1
+  on_starting: <function on_starting at 0x7f9f51394230>
+  worker_abort: <function worker_abort at 0x7f9f51394c08>
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  reload: False
+  check_config: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7f9f51399320>
+  timeout: 30
+  ca_certs: None
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+  statsd_prefix: 
+[2015-07-07 10:15:46 +0000] [13839] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 10:15:46 +0000] [13839] [DEBUG] Arbiter booted
+[2015-07-07 10:15:46 +0000] [13839] [INFO] Listening at: http://127.0.0.1:8000 (13839)
+[2015-07-07 10:15:46 +0000] [13839] [INFO] Using worker: sync
+[2015-07-07 10:15:46 +0000] [13849] [INFO] Booting worker with pid: 13849
+[2015-07-07 10:15:46 +0000] [13849] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 118, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/util.py", line 355, in import_app
+    __import__(module)
+ImportError: No module named runserver
+Traceback (most recent call last):
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 118, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/util.py", line 355, in import_app
+    __import__(module)
+ImportError: No module named runserver
+[2015-07-07 10:15:46 +0000] [13849] [INFO] Worker exiting (pid: 13849)
+Traceback (most recent call last):
+  File "/var/www/vidcon/vidcon_env/bin/gunicorn", line 11, in <module>
+    sys.exit(run())
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 74, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 189, in run
+    super(Application, self).run()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 174, in run
+    self.manage_workers()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 477, in manage_workers
+    self.spawn_workers()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 541, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 214, in handle_chld
+    self.reap_workers()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 459, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Starting vidcon
+[2015-07-07 10:15:47 +0000] [13850] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x7f727cf857d0>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x7f727cf85500>
+  pre_fork: <function pre_fork at 0x7f727cf85668>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 1001
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 3
+  proc_name: vidcon
+  sendfile: True
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x7f727cf85398>
+  pre_exec: <function pre_exec at 0x7f727cf85d70>
+  worker_tmp_dir: None
+  post_worker_init: <function post_worker_init at 0x7f727cf85938>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x7f727cf8a488>
+  config: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7f727cf85ed8>
+  post_request: <function post_request at 0x7f727cf8a050>
+  user: 1001
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x7f727cf85aa0>
+  threads: 1
+  max_requests: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x7f727cf8a1b8>
+  chdir: /var/www/vidcon/vidcon_env
+  paste: None
+  default_proc_name: runserver:app
+  errorlog: -
+  loglevel: debug
+  logconfig: None
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  daemon: False
+  ciphers: TLSv1
+  on_starting: <function on_starting at 0x7f727cf85230>
+  worker_abort: <function worker_abort at 0x7f727cf85c08>
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  reload: False
+  check_config: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7f727cf8a320>
+  timeout: 30
+  ca_certs: None
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+  statsd_prefix: 
+[2015-07-07 10:15:47 +0000] [13850] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 10:15:47 +0000] [13850] [DEBUG] Arbiter booted
+[2015-07-07 10:15:47 +0000] [13850] [INFO] Listening at: http://127.0.0.1:8000 (13850)
+[2015-07-07 10:15:47 +0000] [13850] [INFO] Using worker: sync
+[2015-07-07 10:15:47 +0000] [13860] [INFO] Booting worker with pid: 13860
+[2015-07-07 10:15:47 +0000] [13860] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 118, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/util.py", line 355, in import_app
+    __import__(module)
+ImportError: No module named runserver
+Traceback (most recent call last):
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 118, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/util.py", line 355, in import_app
+    __import__(module)
+ImportError: No module named runserver
+[2015-07-07 10:15:47 +0000] [13860] [INFO] Worker exiting (pid: 13860)
+Traceback (most recent call last):
+  File "/var/www/vidcon/vidcon_env/bin/gunicorn", line 11, in <module>
+    sys.exit(run())
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 74, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 189, in run
+    super(Application, self).run()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 174, in run
+    self.manage_workers()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 477, in manage_workers
+    self.spawn_workers()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 541, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 214, in handle_chld
+    self.reap_workers()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 459, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Starting vidcon
+[2015-07-07 10:15:49 +0000] [13861] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x7fcd338e97d0>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x7fcd338e9500>
+  pre_fork: <function pre_fork at 0x7fcd338e9668>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 1001
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 3
+  proc_name: vidcon
+  sendfile: True
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x7fcd338e9398>
+  pre_exec: <function pre_exec at 0x7fcd338e9d70>
+  worker_tmp_dir: None
+  post_worker_init: <function post_worker_init at 0x7fcd338e9938>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x7fcd338ee488>
+  config: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7fcd338e9ed8>
+  post_request: <function post_request at 0x7fcd338ee050>
+  user: 1001
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x7fcd338e9aa0>
+  threads: 1
+  max_requests: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x7fcd338ee1b8>
+  chdir: /var/www/vidcon/vidcon_env
+  paste: None
+  default_proc_name: runserver:app
+  errorlog: -
+  loglevel: debug
+  logconfig: None
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  daemon: False
+  ciphers: TLSv1
+  on_starting: <function on_starting at 0x7fcd338e9230>
+  worker_abort: <function worker_abort at 0x7fcd338e9c08>
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  reload: False
+  check_config: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7fcd338ee320>
+  timeout: 30
+  ca_certs: None
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+  statsd_prefix: 
+[2015-07-07 10:15:49 +0000] [13861] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 10:15:49 +0000] [13861] [DEBUG] Arbiter booted
+[2015-07-07 10:15:49 +0000] [13861] [INFO] Listening at: http://127.0.0.1:8000 (13861)
+[2015-07-07 10:15:49 +0000] [13861] [INFO] Using worker: sync
+[2015-07-07 10:15:49 +0000] [13871] [INFO] Booting worker with pid: 13871
+[2015-07-07 10:15:49 +0000] [13871] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 118, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/util.py", line 355, in import_app
+    __import__(module)
+ImportError: No module named runserver
+Traceback (most recent call last):
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 118, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/util.py", line 355, in import_app
+    __import__(module)
+ImportError: No module named runserver
+[2015-07-07 10:15:49 +0000] [13871] [INFO] Worker exiting (pid: 13871)
+Traceback (most recent call last):
+  File "/var/www/vidcon/vidcon_env/bin/gunicorn", line 11, in <module>
+    sys.exit(run())
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 74, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 189, in run
+    super(Application, self).run()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 174, in run
+    self.manage_workers()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 477, in manage_workers
+    self.spawn_workers()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 541, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 214, in handle_chld
+    self.reap_workers()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 459, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Starting vidcon
+[2015-07-07 10:15:52 +0000] [13872] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x7fd80873f7d0>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x7fd80873f500>
+  pre_fork: <function pre_fork at 0x7fd80873f668>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 1001
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 3
+  proc_name: vidcon
+  sendfile: True
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x7fd80873f398>
+  pre_exec: <function pre_exec at 0x7fd80873fd70>
+  worker_tmp_dir: None
+  post_worker_init: <function post_worker_init at 0x7fd80873f938>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x7fd808744488>
+  config: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7fd80873fed8>
+  post_request: <function post_request at 0x7fd808744050>
+  user: 1001
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x7fd80873faa0>
+  threads: 1
+  max_requests: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x7fd8087441b8>
+  chdir: /var/www/vidcon/vidcon_env
+  paste: None
+  default_proc_name: runserver:app
+  errorlog: -
+  loglevel: debug
+  logconfig: None
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  daemon: False
+  ciphers: TLSv1
+  on_starting: <function on_starting at 0x7fd80873f230>
+  worker_abort: <function worker_abort at 0x7fd80873fc08>
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  reload: False
+  check_config: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7fd808744320>
+  timeout: 30
+  ca_certs: None
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+  statsd_prefix: 
+[2015-07-07 10:15:52 +0000] [13872] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 10:15:52 +0000] [13872] [DEBUG] Arbiter booted
+[2015-07-07 10:15:52 +0000] [13872] [INFO] Listening at: http://127.0.0.1:8000 (13872)
+[2015-07-07 10:15:52 +0000] [13872] [INFO] Using worker: sync
+[2015-07-07 10:15:52 +0000] [13882] [INFO] Booting worker with pid: 13882
+[2015-07-07 10:15:52 +0000] [13882] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 118, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/util.py", line 355, in import_app
+    __import__(module)
+ImportError: No module named runserver
+Traceback (most recent call last):
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 118, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/util.py", line 355, in import_app
+    __import__(module)
+ImportError: No module named runserver
+[2015-07-07 10:15:52 +0000] [13882] [INFO] Worker exiting (pid: 13882)
+Traceback (most recent call last):
+  File "/var/www/vidcon/vidcon_env/bin/gunicorn", line 11, in <module>
+    sys.exit(run())
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 74, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 189, in run
+    super(Application, self).run()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 174, in run
+    self.manage_workers()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 477, in manage_workers
+    self.spawn_workers()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 541, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 214, in handle_chld
+    self.reap_workers()
+  File "/var/www/vidcon/vidcon_env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 459, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Starting vidcon
+[2015-07-07 10:42:14 +0000] [14068] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 10:42:14 +0000] [14068] [INFO] Listening at: http://127.0.0.1:8000 (14068)
+[2015-07-07 10:42:14 +0000] [14068] [INFO] Using worker: sync
+[2015-07-07 10:42:14 +0000] [14078] [INFO] Booting worker with pid: 14078
+[2015-07-07 10:47:21 +0000] [14068] [INFO] Handling signal: term
+[2015-07-07 10:47:21 +0000] [14078] [INFO] Worker exiting (pid: 14078)
+[2015-07-07 10:47:21 +0000] [14068] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-07 10:48:05 +0000] [14109] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 10:48:05 +0000] [14109] [INFO] Listening at: http://127.0.0.1:8000 (14109)
+[2015-07-07 10:48:05 +0000] [14109] [INFO] Using worker: sync
+[2015-07-07 10:48:05 +0000] [14119] [INFO] Booting worker with pid: 14119
+[2015-07-07 11:08:44 +0000] [14109] [INFO] Handling signal: term
+[2015-07-07 11:08:44 +0000] [14119] [INFO] Worker exiting (pid: 14119)
+[2015-07-07 11:08:44 +0000] [14109] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-07 11:09:06 +0000] [1382] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 11:09:06 +0000] [1382] [INFO] Listening at: http://127.0.0.1:8000 (1382)
+[2015-07-07 11:09:06 +0000] [1382] [INFO] Using worker: sync
+[2015-07-07 11:09:06 +0000] [1447] [INFO] Booting worker with pid: 1447
+[2015-07-07 13:40:39 +0000] [1382] [INFO] Handling signal: term
+[2015-07-07 13:40:39 +0000] [1447] [INFO] Worker exiting (pid: 1447)
+[2015-07-07 13:40:40 +0000] [1382] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-07 13:40:55 +0000] [1444] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 13:40:55 +0000] [1444] [INFO] Listening at: http://127.0.0.1:8000 (1444)
+[2015-07-07 13:40:55 +0000] [1444] [INFO] Using worker: sync
+[2015-07-07 13:40:55 +0000] [1515] [INFO] Booting worker with pid: 1515
+[2015-07-07 14:32:31 +0000] [1444] [CRITICAL] WORKER TIMEOUT (pid:1515)
+[2015-07-07 14:32:31 +0000] [1515] [INFO] Worker exiting (pid: 1515)
+[2015-07-07 14:32:31 +0000] [1525] [INFO] Booting worker with pid: 1525
+[2015-07-07 14:33:23 +0000] [1444] [INFO] Handling signal: term
+[2015-07-07 14:33:23 +0000] [1525] [INFO] Worker exiting (pid: 1525)
+[2015-07-07 14:33:23 +0000] [1444] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-07 14:33:37 +0000] [1446] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 14:33:37 +0000] [1446] [INFO] Listening at: http://127.0.0.1:8000 (1446)
+[2015-07-07 14:33:37 +0000] [1446] [INFO] Using worker: sync
+[2015-07-07 14:33:37 +0000] [1520] [INFO] Booting worker with pid: 1520
+[2015-07-07 14:43:05 +0000] [1446] [INFO] Handling signal: term
+[2015-07-07 14:43:05 +0000] [1520] [INFO] Worker exiting (pid: 1520)
+[2015-07-07 14:43:05 +0000] [1446] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-07 14:43:18 +0000] [1446] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 14:43:18 +0000] [1446] [INFO] Listening at: http://127.0.0.1:8000 (1446)
+[2015-07-07 14:43:18 +0000] [1446] [INFO] Using worker: sync
+[2015-07-07 14:43:18 +0000] [1519] [INFO] Booting worker with pid: 1519
+[2015-07-07 14:56:48 +0000] [1446] [INFO] Handling signal: term
+[2015-07-07 14:56:48 +0000] [1519] [INFO] Worker exiting (pid: 1519)
+[2015-07-07 14:56:48 +0000] [1446] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-07 14:57:01 +0000] [1403] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 14:57:01 +0000] [1403] [INFO] Listening at: http://127.0.0.1:8000 (1403)
+[2015-07-07 14:57:01 +0000] [1403] [INFO] Using worker: sync
+[2015-07-07 14:57:01 +0000] [1477] [INFO] Booting worker with pid: 1477
+[2015-07-07 15:02:21 +0000] [1403] [INFO] Handling signal: term
+[2015-07-07 15:02:21 +0000] [1477] [INFO] Worker exiting (pid: 1477)
+[2015-07-07 15:02:21 +0000] [1403] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-07 15:02:35 +0000] [1445] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 15:02:35 +0000] [1445] [INFO] Listening at: http://127.0.0.1:8000 (1445)
+[2015-07-07 15:02:35 +0000] [1445] [INFO] Using worker: sync
+[2015-07-07 15:02:35 +0000] [1519] [INFO] Booting worker with pid: 1519
+[2015-07-07 15:12:12 +0000] [1445] [INFO] Handling signal: term
+[2015-07-07 15:12:12 +0000] [1519] [INFO] Worker exiting (pid: 1519)
+[2015-07-07 15:12:12 +0000] [1445] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-07 15:12:25 +0000] [1436] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 15:12:25 +0000] [1436] [INFO] Listening at: http://127.0.0.1:8000 (1436)
+[2015-07-07 15:12:25 +0000] [1436] [INFO] Using worker: sync
+[2015-07-07 15:12:25 +0000] [1510] [INFO] Booting worker with pid: 1510
+[2015-07-07 15:31:04 +0000] [1436] [INFO] Handling signal: term
+[2015-07-07 15:31:04 +0000] [1510] [INFO] Worker exiting (pid: 1510)
+f2ff2fec-cbfd-4931-b4a6-0ee6b38ef7c0
+[2015-07-07 15:31:04 +0000] [1436] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-07 15:31:17 +0000] [1446] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 15:31:17 +0000] [1446] [INFO] Listening at: http://127.0.0.1:8000 (1446)
+[2015-07-07 15:31:17 +0000] [1446] [INFO] Using worker: sync
+[2015-07-07 15:31:17 +0000] [1520] [INFO] Booting worker with pid: 1520
+[2015-07-07 16:02:26 +0000] [1446] [INFO] Handling signal: term
+[2015-07-07 16:02:26 +0000] [1520] [INFO] Worker exiting (pid: 1520)
+73fd1895-2369-4923-8107-733aa820f9f2
+b6603fc9-6111-4cb6-a553-cb0d5ea6fb57
+17be4eb7-e351-46c3-8326-0061e192a688
+c3b91fc9-6ffe-4b1f-a765-42a039161894
+1925ada5-9f32-4193-ab9a-70faaca6e768
+2795c9de-f80f-4214-a274-19466627482d
+[2015-07-07 16:02:26 +0000] [1446] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-07 16:02:27 +0000] [1941] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 16:02:27 +0000] [1941] [INFO] Listening at: http://127.0.0.1:8000 (1941)
+[2015-07-07 16:02:27 +0000] [1941] [INFO] Using worker: sync
+[2015-07-07 16:02:27 +0000] [1951] [INFO] Booting worker with pid: 1951
+[2015-07-07 16:05:40 +0000] [1941] [INFO] Handling signal: term
+[2015-07-07 16:05:40 +0000] [1951] [INFO] Worker exiting (pid: 1951)
+708f2d62-92e4-460c-92d5-ac9e689d7905
+84d0c96b-e3f0-4524-839f-741743b795c6
+74510fe6-a9c5-43ac-9852-6536d3377bed
+955f7cf0-494e-4897-bb50-75bb09771c23
+1b577f11-8cd4-4864-993f-9d00a0759deb
+[2015-07-07 16:05:40 +0000] [1941] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-07 16:05:41 +0000] [1990] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 16:05:41 +0000] [1990] [INFO] Listening at: http://127.0.0.1:8000 (1990)
+[2015-07-07 16:05:41 +0000] [1990] [INFO] Using worker: sync
+[2015-07-07 16:05:41 +0000] [2000] [INFO] Booting worker with pid: 2000
+[2015-07-07 16:07:29 +0000] [1990] [INFO] Handling signal: term
+[2015-07-07 16:07:29 +0000] [2000] [INFO] Worker exiting (pid: 2000)
+56905679-0f68-4f42-9636-55a9ebc8eb1a
+[2015-07-07 16:07:29 +0000] [1990] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-07 16:07:31 +0000] [2012] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 16:07:31 +0000] [2012] [INFO] Listening at: http://127.0.0.1:8000 (2012)
+[2015-07-07 16:07:31 +0000] [2012] [INFO] Using worker: sync
+[2015-07-07 16:07:31 +0000] [2022] [INFO] Booting worker with pid: 2022
+[2015-07-07 16:46:10 +0000] [2012] [INFO] Handling signal: term
+[2015-07-07 16:46:10 +0000] [2022] [INFO] Worker exiting (pid: 2022)
+92ca016f-1c05-486e-a0d8-5327b56bf0a8
+5a4f92c0-937a-4c70-83a1-0444d1f5ee29
+e33cc31b-a0a5-4cdc-93b7-68238f5d1a14
+6a724790-da04-443b-bacf-d25b47321bf9
+0861f027-45a1-4f3b-924a-e1548de7847a
+5f64f8d4-8d9a-4f57-8692-03f3118f7c57
+807c92a7-486a-4eec-ad55-2acf3b849bf7
+[2015-07-07 16:46:10 +0000] [2012] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-07 16:46:24 +0000] [1436] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 16:46:24 +0000] [1436] [INFO] Listening at: http://127.0.0.1:8000 (1436)
+[2015-07-07 16:46:24 +0000] [1436] [INFO] Using worker: sync
+[2015-07-07 16:46:24 +0000] [1510] [INFO] Booting worker with pid: 1510
+[2015-07-07 17:04:54 +0000] [1436] [INFO] Handling signal: term
+[2015-07-07 17:04:54 +0000] [1510] [INFO] Worker exiting (pid: 1510)
+[2015-07-07 17:04:54 +0000] [1436] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-07 17:05:07 +0000] [1435] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 17:05:07 +0000] [1435] [INFO] Listening at: http://127.0.0.1:8000 (1435)
+[2015-07-07 17:05:07 +0000] [1435] [INFO] Using worker: sync
+[2015-07-07 17:05:07 +0000] [1509] [INFO] Booting worker with pid: 1509
+[2015-07-07 17:20:23 +0000] [1435] [INFO] Handling signal: term
+[2015-07-07 17:20:23 +0000] [1509] [INFO] Worker exiting (pid: 1509)
+6745dade-3159-4544-89b2-68499dc4627b
+574b88e7-d29e-4e24-8aea-e02fc03db833
+aef90ce5-6def-412e-a83f-4104571a527d
+[2015-07-07 17:20:23 +0000] [1435] [INFO] Shutting down: Master
+Starting vidcon
+[2015-07-07 17:20:36 +0000] [1435] [INFO] Starting gunicorn 19.3.0
+[2015-07-07 17:20:36 +0000] [1435] [INFO] Listening at: http://127.0.0.1:8000 (1435)
+[2015-07-07 17:20:36 +0000] [1435] [INFO] Using worker: sync
+[2015-07-07 17:20:36 +0000] [1508] [INFO] Booting worker with pid: 1508
