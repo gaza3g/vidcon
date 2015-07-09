@@ -54,5 +54,12 @@ docs/_build/
 # Redis
 dump.rdb
 
+# Project specific
+logs/gunicorn_access.log
+logs/gunicorn_supervisor.log
+logs/nginx_access.log
+
+# Virtualenv stuff
+vidcon_env/
 
 *.DS_Store
