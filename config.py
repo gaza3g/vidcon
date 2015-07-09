@@ -1,28 +1,18 @@
 import os
 
+
 class Config(object):
 	DEBUG = False
 	TESTING = False
 	CSRF_ENABLED = True
 	SECRET_KEY = '43DK&$GBV$MSHY'
-	SQLALCHEMY_DATABASE_URI = "postgresql://localhost/vidcon"
-	DEBUG = False
+	SQLALCHEMY_DATABASE_URI = "postgresql://localhost/vidconuser"
+	VIDCON_ROOT = '/media/edulearnupload/asknlearn/vidcon/'
 
 
 class ProductionConfig(Config):
-	DEVELOPMENT = True
-	DEBUG = True
-	TESTING = True
+    DEBUG = False
 
-class StagingConfig(Config):
-	DEVELOPMENT = True
-	DEBUG = True
-	TESTING = True
 
 class DevelopmentConfig(Config):
-	DEVELOPMENT = True
-	DEBUG = True
-	TESTING = True
-
-class TestingConfig(Config):
-	TESTING = True
+	VIDCON_ROOT = '/Volumes/EdulearnNetUpload/asknlearn/vidcon/'
