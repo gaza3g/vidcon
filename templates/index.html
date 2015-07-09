@@ -14,7 +14,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-5 col-sm-offset-1">
-          <h1>Wordcount 3000</h1>
+          <h1>Conversion Queue</h1>
           <br>
           <form role="form" method="POST" action="/">
             <div class="form-group">
@@ -29,26 +29,22 @@
           <br>
         </div>
         <div class="col-sm-5 col-sm-offset-1">
-          {% if results %}
-            <h2>Frequencies</h2>
+            <h2>Latest jobs</h2>
             <br>
             <div id="results">
               <table class="table table-striped" style="max-width: 300px;">
                 <thead>
                   <tr>
-                    <th>Word</th>
-                    <th>Count</th>
+                    <th>JobId</th>
+                    <th>Filename</th>
                   </tr>
                 </thead>
-                {% for result in results%}
                   <tr>
-                    <td>{{ result[0] }}</td>
-                    <td>{{ result[1] }}</td>
+                    <td>result 0</td>
+                    <td>{{ result }}</td>
                   </tr>
-                {% endfor %}
               </table>
             </div>
-          {% endif %}
         </div>
       </div>
     </div>
