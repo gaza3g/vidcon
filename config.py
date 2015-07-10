@@ -7,7 +7,7 @@ class Config(object):
 	CSRF_ENABLED = True
 	SECRET_KEY = '43DK&$GBV$MSHY'
 	SQLALCHEMY_DATABASE_URI = "postgresql://localhost/vidconuser"
-	VIDCON_ROOT = '/media/edulearnupload/asknlearn/vidcon/'
+	VIDCON_ROOT = '/media/edulearnupload/'
 
 
 class ProductionConfig(Config):
