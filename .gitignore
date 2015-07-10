@@ -55,11 +55,14 @@ docs/_build/
 dump.rdb
 
 # Project specific
-logs/gunicorn_access.log
-logs/gunicorn_supervisor.log
-logs/nginx_access.log
+logs/
 
 # Virtualenv stuff
 vidcon_env/
+postactivate
 
+# Mac stuff
 *.DS_Store
+
+# Vim stuff
+*.swp
