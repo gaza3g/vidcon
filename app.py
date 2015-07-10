@@ -1,5 +1,4 @@
 import os
-import os.path
 import sys
 import subprocess
 import shlex
@@ -33,6 +32,7 @@ def convert(url):
     errors = []
     job = get_current_job()
     print("Current job: {}".format(job.id))
+    print("Output filename: {}".format(os.path.splitext(url)[0]))
 
     vidcon_root = app.config['VIDCON_ROOT']
 
@@ -40,17 +40,25 @@ def convert(url):
     output_dir = 'output/'
     exc = ""
 
-    input_file = url
-    output_file = url + "_converted.mp4"
+    input_file, input_file_extension = os.path.splitext(url)
+    output_file = input_file + "_converted.mp4"
 
-    input_path = os.path.join(vidcon_root + input_dir, input_file)
+    input_path = os.path.join(vidcon_root + input_dir, input_file + input_file_extension)
     output_path = os.path.join(vidcon_root + output_dir, output_file)
 
     ffmpeg_cmd = """
-		ffmpeg 	-i {0} -c:v libx264 -crf 23 -profile:v baseline
+		ffmpeg 	-i "{0}" -c:v libx264 -crf 23 -profile:v baseline
     			-level 3.0 -pix_fmt yuv420p -c:a aac -ac 2 -strict experimental -b:a 128k
 				-movflags faststart
- 				{1} -y""".format(input_path, output_path)
+ 				"{1}" -y""".format(input_path, output_path)
+
+
+    # ffmpeg_cmd = """
+    #     ffmpeg  -i "{0}"
+    #             -codec:v libx264 -profile:v high -preset slow -b:v 300k -maxrate 350k 
+    #             -bufsize 1000k -vf scale=trunc(oh/a/2)*2:280 -threads 0 -codec:a mp3 -b:a 64k
+    #             "{1}" -y""".format(input_path, output_path)
+
 
     std_err = ""
     std_in = ""
@@ -104,6 +112,10 @@ def convert(url):
     # db.session.add(result)
     # db.session.commit()
     # return return_code
+
+
+    #ffmpeg -i "F:\FFMPEG\Others\wmv.wmv" -codec:v libx264 -profile:v high -preset slow -b:v 300k -maxrate 350k -bufsize 1000k -vf scale=trunc(oh/a/2)*2:280 -threads 0 -codec:a mp3 -b:a 64k "F:\FFMPEG\Others\wmv.mp4
+
 
 
 
