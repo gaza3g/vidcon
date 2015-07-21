@@ -46,7 +46,7 @@ def convert(url):
     input_path = os.path.join(vidcon_root + input_dir, input_file + input_file_extension)
     output_path = os.path.join(vidcon_root + output_dir, output_file)
 
-     ffmpeg_cmd = """
+    ffmpeg_cmd = """
         ffmpeg -i {0} -codec:v libx264 -profile:v high -preset slow -b:v 500k -maxrate 500k 
                -bufsize 1000k -vf scale=854:trunc(ow/a/2)*2 -threads 0 
                -codec:a mp3 -b:a 64k {1}""".format(input_path, output_path)
