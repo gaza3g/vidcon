@@ -15,4 +15,4 @@ class ProductionConfig(Config):
 
 
 class DevelopmentConfig(Config):
-	VIDCON_ROOT = '/Volumes/EdulearnNetUpload/asknlearn/vidcon/'
+	VIDCON_ROOT = '/Volumes/EdulearnNETUpload/'
