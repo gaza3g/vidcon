@@ -2,6 +2,7 @@ import os
 import sys
 import subprocess
 import shlex
+import json
 from flask import Flask, render_template, request, jsonify
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask import jsonify
@@ -24,34 +25,81 @@ from models import *
 ##########
 # helper #
 ##########
-
-
-def convert(url):
-
+def convert(instance,input_file,output_folder,priority,encoding_profile):
 
     errors = []
+
+    profiles = { 
+                "240p": 
+                    { 
+                        "width":    426, 
+                        "vb":       300,
+                        "mb":       300,
+                        "bs":       600
+                    }, 
+                "360p": 
+                    { 
+                        "width":    640, 
+                        "vb":       350,
+                        "mb":       350,
+                        "bs":       700
+                    }, 
+                "480p": 
+                    { 
+                        "width":    854, 
+                        "vb":       500,
+                        "mb":       500,
+                        "bs":       1000
+                    }, 
+                "720p": 
+                    { 
+                        "width":    1280, 
+                        "vb":       1000,
+                        "mb":       1000,
+                        "bs":       2000
+                    }, 
+                "1080p": 
+                    { 
+                        "width":    1920, 
+                        "vb":       2000,
+                        "mb":       2000,
+                        "bs":       4000
+                    }
+                }
+
     job = get_current_job()
     print("Current job: {}".format(job.id))
-    print("Output filename: {}".format(os.path.splitext(url)[0]))
 
+    # Points to 'EdulearnNetUpload' folder
     vidcon_root = app.config['VIDCON_ROOT']
 
-    input_dir = 'input/'
-    output_dir = 'output/'
-    exc = ""
+    # E.g /Volumes/EdulearnNETUpload/asknlearn/vidcon/input/small_Sample.mp4
+    input_file_absolute_path = os.path.join(vidcon_root + instance + '/' + input_file)
 
-    input_file, input_file_extension = os.path.splitext(url)
-    output_file = input_file + "_converted.mp4"
+    # E.g /Volumes/EdulearnNETUpload/asknlearn/vidcon/output/
+    output_folder_absolute_path = os.path.join(vidcon_root + instance + '/' + output_folder)
 
-    input_path = os.path.join(vidcon_root + input_dir, input_file + input_file_extension)
-    output_path = os.path.join(vidcon_root + output_dir, output_file)
+    # E.g small_Sample.mp4, derived from the given input filename
+    output_filename = os.path.split(input_file)[1]
+
+    # Split a filename into its name and extension:
+    # E.g output_file = small_Sample, output_file_extension = .mp4
+    output_file, output_file_extension = os.path.splitext(output_filename)
+    # Force extension to be ".mp4"
+    output_file_extension = ".mp4"
+
+    # Rename the file to include the profile that it was encoded under
+    # E.g small_Sample_240p.mp4
+    new_output_filename = output_file + "_" + encoding_profile + output_file_extension
+
+    new_output_file = os.path.join(output_folder_absolute_path + "/" + new_output_filename)
+
+    profile = profiles[encoding_profile]
 
     ffmpeg_cmd = """
-        ffmpeg -i {0} -codec:v libx264 -profile:v high -preset slow -b:v 500k -maxrate 500k 
-               -bufsize 1000k -vf scale=854:trunc(ow/a/2)*2 -threads 0 
-               -codec:a mp3 -b:a 64k {1}""".format(input_path, output_path)
-
-
+        ffmpeg -i '{0}' -codec:v libx264 -profile:v high -preset slow -b:v {1}k -maxrate {2}k 
+               -bufsize {3}k -vf scale={4}:trunc(ow/a/2)*2 -threads 0 
+               -codec:a mp3 -b:a 64k -y '{5}'""".format(input_file_absolute_path, str(profile['vb']), str(profile['mb']), str(profile['bs']), str(profile['width']), new_output_file)
 
     std_err = ""
     std_in = ""
@@ -59,16 +107,6 @@ def convert(url):
 
     try:
         output = subprocess.check_output(shlex.split(ffmpeg_cmd))
-
-        # p = subprocess.Popen(shlex.split(ffmpeg_cmd), bufsize=2048,
-        #                                stdout=subprocess.PIPE,
-        #                                stderr=subprocess.PIPE)    
-
-        # std_in, std_err = map(lambda b: b.decode('utf-8').replace(os.linesep, '\n'),
-        #                 p.communicate((os.linesep).encode('utf-8')))
-
-        # err, output = p.communicate()
-
         print("Success: {}", output)
     except subprocess.CalledProcessError as ex:
 
@@ -87,31 +125,9 @@ def convert(url):
                                         \n\nreturn_code: \n{}\n\nffmpeg_cmd: \n{}\n\noutput: \n{}\n\n
                                         """
                                         .format(ex.returncode, ffmpeg_cmd.strip(), std_err.strip()))
-        # raise subprocess.CalledProcessError(ex.returncode, ffmpeg_cmd, output="---start---{}---end---".format(std_err))
-
-    # err, output = map(lambda b: b.decode('utf-8').replace(os.linesep, '\n'),
-    #            p.communicate((os.linesep).encode('utf-8')))
-    # print(output)
-    # print(err)
-
-    # return_code = p.returncode
-    # print(return_code)
-
-    # result = Result(
-    #     file_to_convert=url, 
-    #     return_code=return_code,
-    #     output1=output, 
-    #     output2=err)
-    # db.session.add(result)
-    # db.session.commit()
-    # return return_code
-
-
-    #ffmpeg -i "F:\FFMPEG\Others\wmv.wmv" -codec:v libx264 -profile:v high -preset slow -b:v 300k -maxrate 350k -bufsize 1000k -vf scale=trunc(oh/a/2)*2:280 -threads 0 -codec:a mp3 -b:a 64k "F:\FFMPEG\Others\wmv.mp4
-
-
-
-
+    finally:
+        print("{}".format(input_file_absolute_path))
+        print("{}".format(new_output_file))
 
 ##########
 # routes #
@@ -123,60 +139,38 @@ def index():
     results = {}
     if request.method == "POST":
         # get url that the person has entered
-        url = request.form['url']
-        job = q.enqueue_call(
-            func=convert, args=(url,), result_ttl=5000, timeout=10800
-        )
-        print(job.get_id())
+        filename = request.form['url']
+        instance = "asknlearn"
+        input_file = "vidcon/input/" + filename 
+        output_folder = "vidcon/output"
+        priority = "normal"
+        encoding_profile = ["360p"]
+
+
+        for profile in encoding_profile:
+            job = q.enqueue_call(func=convert, args=(instance,input_file,output_folder,priority,profile,), result_ttl=5000, timeout=10800)
 
     return render_template('index.html', results=results)
 
-@app.route('/api/jobs', methods=['POST'])
+
+@app.route('/api/v1/job', methods=['POST'])
 def create_job():
 
-    # vidcon_root = '/Volumes/EdulearnNetUpload/asknlearn/vidcon/'
-    # input_dir = "input/"
-    # input_file = os.path.join(vidcon_root + input_dir, filepath)
+    job_ids = []
 
-    # Request will be in this format:
-    # {
-    #     "input_file":"/Volumes/EdulearnNetUpload/asknlearn/vidcon/input/test1.ogg",
-    #     "output_dir":"/Volumes/EdulearnNetUpload/asknlearn/vidcon/output"
-    # }
-    if not request.json or not 'input_file' in request.json:
-        abort(400)
+    instance = request.json['job']['instance']
+    input_file = request.json['job']['input_file']
+    output_folder = request.json['job']['output_folder']
+    priority = request.json['job']['priority']
 
+    for profile in request.json['job']['encoding_profile']:
+        job = q.enqueue_call(func=convert, args=(instance,input_file,output_folder,priority,profile,), result_ttl=5000, timeout=10800)
+        job_ids.append(job.get_id())
 
-    input_file = request.json
-    return jsonify({'filepath': input_file})
-
-    # Verify that file exists before sending it to the queue
-
-    # if os.path.isfile(input_file):
-    #     return jsonify({'filepath': filepath})
-    # else:
-    #     return jsonify({'Error': "File does not exist."})
-
-
-# @app.route("/results/<job_key>", methods=['GET'])
-# def get_results(job_key):
-
-#     job = Job.fetch(job_key, connection=conn)
-
-#     if job.is_finished:
-#         result = Result.query.filter_by(id=job.result).first()
-#         results = sorted(
-#             result.result_no_stop_words.items(),
-#             key=operator.itemgetter(1),
-#             reverse=True
-#         )[:10]
-#         return jsonify(results)
-#     else:
-#         return job.get_status(), 202
+    return json.dumps(job_ids)
 
 class GazzaThinksItFailedError(Exception):
     pass
-
 
 if __name__ == '__main__':
     app.run()
