@@ -3,7 +3,7 @@ import sys
 import subprocess
 import shlex
 import json
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, Response
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask import jsonify
 from rq import Queue, get_current_job
@@ -72,6 +72,14 @@ def convert(instance,input_file,output_folder,priority,encoding_profile):
 
     # Points to 'EdulearnNetUpload' folder
     vidcon_root = app.config['VIDCON_ROOT']
+
+
+    # Check if directory is mounted properly
+    if os.path.exists(vidcon_root):
+        if len(os.listdir(vidcon_root)) == 0:
+            #TODO mount sequence for OSX
+            subprocess.call(["sudo", "mount", "/media/edulearnupload/"])
+
 
     # E.g /Volumes/EdulearnNETUpload/asknlearn/vidcon/input/small_Sample.mp4
     input_file_absolute_path = os.path.join(vidcon_root + instance + '/' + input_file)
@@ -167,7 +175,31 @@ def create_job():
         job = q.enqueue_call(func=convert, args=(instance,input_file,output_folder,priority,profile,), result_ttl=5000, timeout=10800)
         job_ids.append(job.get_id())
 
-    return json.dumps(job_ids)
+    json_response = json.dumps(job_ids)
+    response=Response(json_response,content_type='application/json; charset=utf-8')
+    response.headers.add('content-length',len(json_response))
+    response.status_code=200
+    return response
+
+
+@app.route('/api/v1/job/<string:job_id>/status', methods=['GET'])
+def job_status(job_id):
+
+    # status: started, finished, failed
+
+    job = q.fetch_job(job_id)
+    json_response = json.dumps({"job_enquiry":
+                        {
+                            "id":job.id,
+                            "status":job.status,
+                            "description":job.description,
+                            "priority":job.origin
+                        }
+                    })
+    response=Response(json_response,content_type='application/json; charset=utf-8')
+    response.headers.add('content-length',len(json_response))
+    response.status_code=200
+    return response
 
 class GazzaThinksItFailedError(Exception):
     pass
