@@ -78,7 +78,7 @@ def convert(instance,input_file,output_folder,priority,encoding_profile):
     if os.path.exists(vidcon_root):
         if len(os.listdir(vidcon_root)) == 0:
             #TODO mount sequence for OSX
-            subprocess.Popen(["sudo","mount","/media/edulearnupload/"])
+            subprocess.call(["sudo", "mount", "/media/edulearnupload/"])
 
 
     # E.g /Volumes/EdulearnNETUpload/asknlearn/vidcon/input/small_Sample.mp4
